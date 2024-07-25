@@ -37,6 +37,8 @@ application {
     mainClass = 'com.nurazlib.tictactoe"
 }
 
+version = '1.0.0'
+
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()

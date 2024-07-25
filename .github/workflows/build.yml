@@ -22,11 +22,14 @@ jobs:
 
     - name: Set up Android SDK
       run: |
+        echo "Installing Android SDK Command Line Tools"
+        sudo apt-get update
         sudo apt-get install -y wget unzip
-        wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip
-        unzip commandlinetools-linux-8512546_latest.zip -d $ANDROID_HOME/cmdline-tools
-        yes | $ANDROID_HOME/cmdline-tools/bin/sdkmanager --licenses
-        $ANDROID_HOME/cmdline-tools/bin/sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3"
+        mkdir -p $ANDROID_HOME/cmdline-tools
+        wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O cmdline-tools.zip
+        unzip cmdline-tools.zip -d $ANDROID_HOME/cmdline-tools
+        yes | $ANDROID_HOME/cmdline-tools/bin/sdkmanager --update
+        yes | $ANDROID_HOME/cmdline-tools/bin/sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3"
 
     - name: Build APK
       run: ./gradlew assembleRelease

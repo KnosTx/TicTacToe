@@ -9,7 +9,7 @@ name: Gradle Package
 
 on:
   release:
-    types: [created]
+    types: [created, update]
 
 jobs:
   build:
@@ -36,9 +36,6 @@ jobs:
       run: ./gradlew build
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
-    # the publishing section of your build.gradle
-    - name: Publish to GitHub Packages
-      run: ./gradlew publish
-      env:
-        USERNAME: ${{ github.actor }}
-        TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # the publishing sectiuild.gradle
+    - name: Run the application
+      run: ./gradlew run

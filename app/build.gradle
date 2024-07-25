@@ -17,12 +17,11 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation libs.junit.jupiter
-
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 
     // This dependency is used by the application.
-    implementation libs.guava
+    implementation 'com.google.guava:guava:31.0.1-jre'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -34,7 +33,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = 'com.nurazlib.tictactoe"
+    mainClass = 'com.nurazlib.tictactoe.App'
 }
 
 version = '1.0.0'

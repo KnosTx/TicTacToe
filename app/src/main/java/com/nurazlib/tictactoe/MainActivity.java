@@ -33,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button resetButton = findViewById(R.id.resetButton);
         resetButton.setOnClickListener(v -> resetGame());
+        handleIntent(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        handleIntent(intent);
     }
 
     private void onButtonClick(int i, int j) {
@@ -97,6 +104,15 @@ public class MainActivity extends AppCompatActivity {
                 board[i][j] = 0;
                 buttons[i][j].setText("");
                 buttons[i][j].setEnabled(true);
+            }
+        }
+    }
+    private void handleIntent(Intent intent) {
+        if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+            Uri uri = intent.getData();
+            if (uri != null) {
+                String data = uri.toString();
+                Toast.makeText(this, "URI: " + data, Toast.LENGTH_LONG).show();
             }
         }
     }

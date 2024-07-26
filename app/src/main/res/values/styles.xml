@@ -1,28 +1,34 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme -->
     <style name="Theme.TicTacToe" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary branding color -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primaryVariant</item>
         <item name="colorOnPrimary">@color/onPrimary</item>
+        
         <!-- Secondary branding color -->
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
+        
         <!-- Background color -->
         <item name="android:colorBackground">@color/background</item>
         <item name="colorOnBackground">@color/onBackground</item>
+        
         <!-- Surface color -->
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/onSurface</item>
+        
         <!-- Error color -->
         <item name="colorError">@color/error</item>
         <item name="colorOnError">@color/onError</item>
+        
         <!-- Customize your theme here -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:navigationBarColor" tools:targetApi="o">?attr/colorPrimaryVariant</item>
     </style>
-
-    <style name="TicTacToeButton">
+    
+    <!-- Additional styles for Tic Tac Toe buttons -->
+    <style name="TicTacToeButton" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_columnWeight">1</item>

@@ -1,5 +1,4 @@
 <resources>
-    <!-- Colors -->
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryVariant">#3700B3</color>
     <color name="colorOnPrimary">#FFFFFF</color>
@@ -7,15 +6,6 @@
     <color name="colorSecondaryVariant">#018786</color>
     <color name="colorOnSecondary">#000000</color>
 
-    <!-- Attributes -->
-    <attr name="colorPrimary" format="color"/>
-    <attr name="colorPrimaryVariant" format="color"/>
-    <attr name="colorOnPrimary" format="color"/>
-    <attr name="colorSecondary" format="color"/>
-    <attr name="colorSecondaryVariant" format="color"/>
-    <attr name="colorOnSecondary" format="color"/>
-
-    <!-- Styles -->
     <style name="Theme.TicTacToe" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>

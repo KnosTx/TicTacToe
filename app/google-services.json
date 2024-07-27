@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "761412221317",
+    "project_id": "tictactoenurazlib",
+    "storage_bucket": "tictactoenurazlib.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761412221317:android:eea06960076d07dd3decec",
+        "android_client_info": {
+          "package_name": "com.nurazlib.tictactoe"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaqTP9V1uh61UnNpH1Lmz3gREJxZkHu6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

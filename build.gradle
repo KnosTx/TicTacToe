@@ -13,6 +13,7 @@ buildscript {
         // Add the Android Gradle plugin and Kotlin plugin
         classpath "com.android.tools.build:gradle:$gradle_plugin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.gms:google-services:4.3.14"
     }
 }
 

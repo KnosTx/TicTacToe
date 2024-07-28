@@ -28,9 +28,9 @@ jobs:
 
     - name: Sign APK
       run: |
-        jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release-key.jks \
-          -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
-          -keypass ${{ secrets.KEY_PASSWORD }} \
+        jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore app/release-key.jks \
+          -storepass 8j@Z!v3B#x1QwE7L \
+          -keypass 8j@Z!v3B#x1QwE7L \
           app/build/outputs/apk/release/app-release-unsigned.apk ${{ secrets.KEY_ALIAS }}
         zipalign -v 4 app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/app-release.apk
 

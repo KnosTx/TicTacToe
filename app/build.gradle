@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'com.nurazlib.tictactoe' // Tambahkan baris ini untuk menentukan namespace
+    namespace 'com.nurazlib.tictactoe'
     compileSdk 33
 
     defaultConfig {
@@ -18,12 +18,13 @@ android {
 
     signingConfigs {
         release {
-            keyAlias System.getenv("KEY_ALIAS") ?: "defaultKeyAlias"
-            keyPassword System.getenv("KEY_PASSWORD") ?: "defaultKeyPassword"
-            storeFile file("release-key.jks")
-            storePassword System.getenv("KEYSTORE_PASSWORD") ?: "defaultKeystorePassword"
+            keyAlias 'tictactoe'
+            keyPassword '8j@Z!v3B#x1QwE7L'
+            storeFile file('release-key.jks')
+            storePassword '8j@Z!v3B#x1QwE7L'
         }
     }
+
     buildTypes {
         release {
             signingConfig signingConfigs.release

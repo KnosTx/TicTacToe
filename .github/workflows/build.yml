@@ -40,4 +40,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: app-all-folder-and-file
-        path: app
+        path: app/build/outputs

@@ -90,8 +90,8 @@
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout:alignParentBottom="true"
+        android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-xxxxxxxxxxx-xxxxxxxx" />
+        ads:adUnitId="ca-app-pub-4186599691041011/3688264571" />
 
 </LinearLayout>

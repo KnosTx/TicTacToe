@@ -16,18 +16,8 @@ android {
         versionName "1.0.1"
     }
 
-    signingConfigs {
-        release {
-            keyAlias 'tictactoe'
-            keyPassword '8j@Z!v3B#x1QwE7L'
-            storeFile file('release-key.jks')
-            storePassword '8j@Z!v3B#x1QwE7L'
-        }
-    }
-
     buildTypes {
         release {
-            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }

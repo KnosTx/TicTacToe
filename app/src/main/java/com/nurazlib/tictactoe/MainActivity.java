@@ -10,11 +10,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class MainActivity extends AppCompatActivity {
 
     private boolean playerXTurn = true;
     private Button[][] buttons = new Button[3][3];
     private int[][] board = new int[3][3];
+    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,27 +27,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         GridLayout gridLayout = findViewById(R.id.gridLayout);
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                int id = getResources().getIdentifier("button" + (i * 3 + j + 1), "id", getPackageName());
-                buttons[i][j] = findViewById(id);
-                final int finalI = i;
-                final int finalJ = j;
-                buttons[i][j].setOnClickListener(v -> onButtonClick(finalI, finalJ));
-            }
-        }
+        initializeButtons(gridLayout);
 
         Button resetButton = findViewById(R.id.resetButton);
         resetButton.setOnClickListener(v -> resetGame());
+
         handleIntent(getIntent());
 
-        MobileAds.initialize(this, initializationStatus-> {});
+        MobileAds.initialize(this, initializationStatus -> {});
 
         // Load banner ads
-
         adView = findViewById(R.id.adView);
-
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
     }
@@ -75,6 +70,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         handleIntent(intent);
+    }
+
+    private void initializeButtons(GridLayout gridLayout) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                int id = getResources().getIdentifier("button" + (i * 3 + j + 1), "id", getPackageName());
+                buttons[i][j] = findViewById(id);
+                final int finalI = i;
+                final int finalJ = j;
+                buttons[i][j].setOnClickListener(v -> onButtonClick(finalI, finalJ));
+            }
+        }
     }
 
     private void onButtonClick(int i, int j) {
@@ -142,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_VIEW.equals(intent.getAction())) {
             Uri uri = intent.getData();
